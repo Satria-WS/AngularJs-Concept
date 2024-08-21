@@ -1,0 +1,6 @@
+//Installing angular cli
+
+$ npm i @angular/cli-g
+
+//checking version
+$ ng version
