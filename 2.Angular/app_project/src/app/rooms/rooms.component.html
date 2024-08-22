@@ -1,1 +1,16 @@
-<p>rooms works!</p>
+<main>
+  <h1 class="">Hotel</h1>
+  <p>the my hotel name is {{ HotelName }}</p>
+
+  <div [innerText]="numberOfrooms"></div>
+  <p>{{ numberOfrooms }}</p>
+
+
+  <div class="border border-blue-400">
+    <p>isRooms: {{ hideRooms }}</p>
+    <p [hidden]="hideRooms">Show me</p>
+    <button class="border border-x-red-600" type="submit" (click)="toogle()">
+      Click me
+    </button>
+  </div>
+</main>

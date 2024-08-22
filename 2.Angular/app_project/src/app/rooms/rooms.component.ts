@@ -8,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './rooms.component.css'
 })
 export class RoomsComponent {
+  HotelName:string = 'Tanginamo Hotel';
+  numberOfrooms:number = 99;
+  hideRooms: boolean = false;
 
+
+  toogle() {
+    this.hideRooms = !this.hideRooms;
+  }
 }
