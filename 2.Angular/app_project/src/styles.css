@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0; /* Example of resetting margin */
+  padding: 0; /* Example of resetting padding */
+  font-family: sans-serif; /* Example of overriding font-family */
+}
