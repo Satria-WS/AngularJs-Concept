@@ -5,7 +5,6 @@
   <div [innerText]="numberOfrooms"></div>
   <p>{{ numberOfrooms }}</p>
 
-
   <div class="border border-blue-400">
     <p>isRooms: {{ hideRooms }}</p>
     <p [hidden]="hideRooms">Show me</p>
@@ -13,4 +12,15 @@
       Click me
     </button>
   </div>
+
+  {{ rooms?.availableRooms ?? "No rooms" }}
+  <!-- <div *ngIf="rooms.availableRooms > 0">Room list</div> -->
+  <!-- <div *ngIf="rooms?.availableRooms > 0">
+    {{rooms.totalRooms}}
+  </div> -->
+
+  <p *ngIf="isHas()">
+    <span>this is true</span>
+  </p>
+  <p>Access gallery Item {{ galleryItems }}</p>
 </main>
