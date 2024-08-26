@@ -74,5 +74,4 @@ export class RoomsComponent {
   toogle() {
     this.hideRooms = !this.hideRooms;
   }
-
 }
