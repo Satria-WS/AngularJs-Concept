@@ -19,8 +19,22 @@
     {{rooms.totalRooms}}
   </div> -->
 
-  <p *ngIf="isHas()">
-    <span>this is true</span>
-  </p>
-  <p>Access gallery Item {{ galleryItems }}</p>
+  <div *ngIf="isHas()">
+    <table>
+      <tr>
+        <th>Room Number</th>
+        <th>Room Type</th>
+        <th>Room Price</th>
+        <th>Room Aminities</th>
+        <th>Checking Time</th>
+      </tr>
+      <tr *ngFor="let item of roomList">
+        <td>{{ item.roomNumber }}</td>
+        <td>{{ item.roomType }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.amenities }}</td>
+        <td>{{ item.checkinTime }}</td>
+      </tr>
+    </table>
+  </div>
 </main>
