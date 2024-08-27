@@ -1,0 +1,24 @@
+<div>
+  <p>interpolation works!</p>
+ <!-- event binding on button -->
+  <button
+  [disabled]="false"
+    type="button"
+    (click)="isShow()"
+    [disabled]="showButton"
+    class="border border-l-purple-500 rounded-sm">
+    test
+  </button>
+  <ul>
+    <li>
+      <!-- Interpolation -->
+      <img src="{{ books[0].src }}" width="100" alt="{{ books[0].name }}" />
+      <p>Name : {{ books[0].name }} by author Author : {{ books[0].author }}</p>
+    </li>
+    <li>
+      <!-- Property Binding -->
+      <img [src]="books[1].src" width="100" [alt]="books[1].name" />
+      <p>Name : {{ books[1].name }} by author Author : {{ books[1].author }}</p>
+    </li>
+  </ul>
+</div>
