@@ -1,0 +1,23 @@
+<div>
+  <p>directive works!</p>
+
+  <!-- if -->
+  <ng-container>
+    <ul *ngIf="isShow">
+      <li>Book</li>
+      <li>Pencil</li>
+      <li>Eraser</li>
+    </ul>
+
+    <button (click)="handleClick()">CLICK ME</button>
+  </ng-container>
+
+  <!-- for -->
+  <ng-container>
+    <ul *ngFor="let item of books; let i = index">
+      <li>
+        <img [src]="item.src" [alt]="item.name" width="100" />
+      </li>
+    </ul>
+  </ng-container>
+</div>
