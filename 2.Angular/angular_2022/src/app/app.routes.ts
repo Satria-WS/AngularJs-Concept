@@ -5,6 +5,7 @@ import { InterpolationComponent } from './concept/interpolation/interpolation.co
 import { TwoWayBindingComponent } from './concept/two-way-binding/two-way-binding.component';
 import { DirectiveComponent } from './concept/directive/directive.component';
 import { PipexComponent } from './concept/pipex/pipex.component';
+import { ParentToChildComponent } from './concept/parent-to-child/parent-to-child.component';
 
 export const routes: Routes = [
   {
@@ -30,6 +31,10 @@ export const routes: Routes = [
       {
         path: 'pipe',
         component: PipexComponent,
+      },
+      {
+        path: 'parent_to_child',
+        component: ParentToChildComponent,
       }
     ],
   },
