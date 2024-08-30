@@ -1,0 +1,14 @@
+<p>parent-to-child works!</p>
+<!-- parent -->
+<!-- passing data parent to child component -->
+<div>
+  <app-pipex [childData]="myCar" />
+</div>
+
+<!-- passing data child to parent -->
+<div>
+  <app-pipex (newItemEvent)="addItem($event)"></app-pipex>
+  <ul>
+    <li *ngFor="let item of items">{{ item }}</li>
+  </ul>
+</div>

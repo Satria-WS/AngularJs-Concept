@@ -1,1 +1,25 @@
-<p>pipex works!</p>
+<!-- child data -->
+<div>
+  <p>pipex works!</p>
+  <p>Price Books:</p>
+
+  <ul *ngFor="let item of books">
+    <li>
+      {{ item.name | titlecase }}
+      {{ item.amount | currency: 'Rp.' : 'symbol' : '1.0-0' }}
+    </li>
+  </ul>
+  <div>passing data: {{ childData }}</div>
+
+  <!-- passing child data to parent component -->
+  <div>
+    <label for="item-input">Add an item:</label>
+    <input type="text" id="item-input" #newItem />
+    <button
+      class="border border-y-orange-600"
+      type="button"
+      (click)="addNewItem(newItem.value)">
+      Add to parent's list
+    </button>
+  </div>
+</div>
