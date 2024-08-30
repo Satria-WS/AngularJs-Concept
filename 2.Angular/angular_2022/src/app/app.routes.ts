@@ -6,11 +6,14 @@ import { TwoWayBindingComponent } from './concept/two-way-binding/two-way-bindin
 import { DirectiveComponent } from './concept/directive/directive.component';
 import { PipexComponent } from './concept/pipex/pipex.component';
 import { ParentToChildComponent } from './concept/parent-to-child/parent-to-child.component';
+import { BooksComponent } from './books/books.component';
+import { ListeningCustomEventComponent } from './concept/listening-custom-event/listening-custom-event.component';
+
 
 export const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: BooksComponent,
   },
   {
     path: 'concept',
@@ -35,6 +38,10 @@ export const routes: Routes = [
       {
         path: 'parent_to_child',
         component: ParentToChildComponent,
+      },
+      {
+        path: 'listen_custom_event',
+        component: ListeningCustomEventComponent,
       }
     ],
   },
