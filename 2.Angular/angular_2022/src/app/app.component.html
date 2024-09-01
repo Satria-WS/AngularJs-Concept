@@ -4,11 +4,11 @@
   </div>
   <div>
     <a class="mx-4" routerLink="/cart"> My Cart</a>
-    <ng-container *ngIf="!isAuthenticated()">
+    <ng-container *ngIf="true">
       <a class="mx-4" routerLink="/login"> Login</a>
       <a class="mx-4" routerLink="/register"> Register</a>
     </ng-container>
-    <ng-container *ngIf="isAuthenticated()">
+    <ng-container *ngIf="false">
       <button (click)="logout()" class="mx-4">Logout</button>
     </ng-container>
   </div>
@@ -16,6 +16,4 @@
 
 
 <router-outlet></router-outlet>
-<div>
-  <app-cart></app-cart>
-</div>
+
