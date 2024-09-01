@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 import { ConceptComponent } from './concept/concept.component';
 import { InterpolationComponent } from './concept/interpolation/interpolation.component';
 import { TwoWayBindingComponent } from './concept/two-way-binding/two-way-binding.component';
@@ -8,6 +7,9 @@ import { PipexComponent } from './concept/pipex/pipex.component';
 import { ParentToChildComponent } from './concept/parent-to-child/parent-to-child.component';
 import { BooksComponent } from './books/books.component';
 import { ListeningCustomEventComponent } from './concept/listening-custom-event/listening-custom-event.component';
+import { CartComponent } from './cart/cart.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 
 export const routes: Routes = [
@@ -15,6 +17,9 @@ export const routes: Routes = [
     path: '',
     component: BooksComponent,
   },
+  { path: 'cart', component: CartComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   {
     path: 'concept',
     component: ConceptComponent,
@@ -45,4 +50,5 @@ export const routes: Routes = [
       }
     ],
   },
+  // { path: '**', component: PageNotFoundComponent },
 ];
