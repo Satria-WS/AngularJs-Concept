@@ -15,7 +15,10 @@
       *ngIf="!isInCart">
       Add to Cart
     </button>
-    <button class="bg-yellow-400 rounded p-3" *ngIf="isInCart">
+    <button
+      (click)="removeFromCart()"
+      class="bg-yellow-400 rounded p-3"
+      *ngIf="isInCart">
       Remove from Cart
     </button>
   </div>
