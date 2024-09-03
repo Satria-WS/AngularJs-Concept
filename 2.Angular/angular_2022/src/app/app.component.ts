@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from './firebase.config';
 
 
 
@@ -14,13 +16,18 @@ import { CartComponent } from './cart/cart.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'angular_2022';
 
 
   // ngOnInit(): void {
   //   initializeApp(firebaseConfig);
   // }
+
+  ngOnInit(): void {
+    initializeApp(firebaseConfig);
+    console.log({ firebaseConfig: initializeApp(firebaseConfig) });
+  }
 
   isAuthenticated() {
     // return this.authService.isAuthenticated;
