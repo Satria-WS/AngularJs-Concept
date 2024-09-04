@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RegisterForm } from '../../types/Auth';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-register',
@@ -19,7 +20,7 @@ export class RegisterComponent implements OnInit {
   };
   passwordMatched: boolean = true;
 
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
     return;
@@ -27,31 +28,10 @@ export class RegisterComponent implements OnInit {
 
   submit() {
 
-    if (this.form.password !== this.form.confirm_password) {
-      this.passwordMatched = false;
-    }
-    // this.authService.register(this.form);
-    console.log(this.form);
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, this.form.email, this.form.password)
-      .then(userCredential => {
-        // Signed up
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const user = userCredential.user;
-        console.log(userCredential);
-        // ...
-      })
-      .catch(error => {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const errorCode = error.code;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const errorMessage = error.message;
-        // ..
-      });
+   return this.authService.register(this.form);
   }
 
   isLoading() {
-    //return this.authService.isLoading;
-    return;
+    return this.authService.isLoading;
   }
 }
