@@ -36,4 +36,43 @@ export class AuthService {
       })
       .finally(() => (this.isLoading = false));
   }
+
+  register(form: RegisterForm) {
+    if (this.isLoading) return;
+
+    this.isLoading = true;
+
+    if (form.password !== form.confirm_password) {
+      this.passwordMatched = false;
+      return;
+    }
+
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, form.email, form.password)
+      .then(userCredential => {
+        this.isAuthenticated = true;
+      })
+      .catch(error => {
+        this.isAuthenticated = false;
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      })
+      .finally(() => (this.isLoading = false));
+  }
+  logout() {
+    const auth = getAuth();
+    signOut(auth)
+      .then(() => {
+        this.router.navigate(['login']);
+        this.isAuthenticated = false;
+      })
+      .catch(error => {
+        // An error happened.
+        console.log('logout error?', error);
+      });
+  }
+  isAuthenticatedx(): boolean {
+    // Implement your authentication logic
+    return true; // Example
+  }
 }
